@@ -11,13 +11,14 @@ import {
   DrawerContentComponentProps,
   DrawerContentOptions,
 } from '@react-navigation/drawer';
-import { user, UserActivities, links } from '../data';
+import { user, UserActivities } from '../data';
 import { Fonts, Colors } from '../utils';
 
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 import DrawerLink from '../components/drawer/DrawerLink';
 import UserActivity from '../components/drawer/UserActivity';
+import { links } from '../data/links';
 
 interface Props {
   drawer: DrawerContentComponentProps<DrawerContentOptions>;

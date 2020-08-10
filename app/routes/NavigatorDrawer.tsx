@@ -2,7 +2,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import AppDrawer from './Drawer';
 import { Colors } from '../utils';
-import { links } from '../data';
+import { links } from '../data/links';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,8 +16,8 @@ const NavigatorDrawer: React.FC = () => {
       }}
       drawerContent={(props) => <AppDrawer drawer={props} />}
       overlayColor={Colors.drawerBackground}>
-      {links.map(({ name, component }) => (
-        <Drawer.Screen name={name} key={name} component={component} />
+      {links.map(({ name, route, component }) => (
+        <Drawer.Screen name={route} key={name} component={component} />
       ))}
     </Drawer.Navigator>
   );
