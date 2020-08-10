@@ -5,7 +5,7 @@ class Author {
   constructor(
     public id: number,
     public name: string,
-    public image: string,
+    public image: { uri: string },
     public social: { facebook: string; instgram: string; twitter: string },
     public podcasts: number,
     public rate: number,

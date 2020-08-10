@@ -75,7 +75,13 @@ const AppDrawer: React.FC<Props> = ({ drawer }) => {
         </View>
         <View style={[styles.drawerContent, styles.drawerContent2]}>
           {links.map((link) => (
-            <DrawerLink {...link} key={link.name} />
+            <DrawerLink
+              {...link}
+              key={link.name}
+              onPress={() => {
+                drawer.navigation.navigate(link.route);
+              }}
+            />
           ))}
           <TouchableNativeFeedback
             background={TouchableNativeFeedback.Ripple(Colors.darkBackground)}

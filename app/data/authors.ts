@@ -10,19 +10,19 @@ const description = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. I
 
 const authors = {
   // prettier-ignore
-  harlod: new Author(0, 'Harold Mccoy', 'author0.png', social, 7286, 6.8, description, 1300, 'red',[], [], []),
+  harlod: new Author(0, 'Harold Mccoy', require('../../assets/images/author0.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  rosemary: new Author(1, 'Rosemary Richards', 'author1.png', social, 7286, 6.8, description, 1300, 'green',[], [], []),
+  rosemary: new Author(1, 'Rosemary Richards', require('../../assets/images/author1.png'), social, 7286, 6.8, description, 1300, 'green',[], [], []),
   // prettier-ignore
-  gregory: new Author(2, 'Gregory Miles', 'author2.png', social, 7286, 6.8, description, 1300, 'blue',[], [], []),
+  gregory: new Author(2, 'Gregory Miles', require('../../assets/images/author2.png'), social, 7286, 6.8, description, 1300, 'blue',[], [], []),
   // prettier-ignore
-  leslie: new Author(3, 'Leslie Fisher', 'author3.png', social, 7286, 6.8, description, 1300, 'red',[], [], []),
+  leslie: new Author(3, 'Leslie Fisher', require('../../assets/images/author3.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  robet: new Author(4, 'Robert Dugoni', 'author4.png', social, 7286, 6.8, description, 1300, 'red',[], [], []),
+  robet: new Author(4, 'Robert Dugoni', require('../../assets/images/author4.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  rowling: new Author(5, 'J.K. Rowling', 'author5.png', social, 7286, 6.8, description, 1300, 'red',[], [], []),
+  rowling: new Author(5, 'J.K. Rowling', require('../../assets/images/author5.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  mary: new Author(6, 'Mary Beth Keane', 'author6.png', social, 7286, 6.8, description, 1300, 'red',[], [], [])
+  mary: new Author(6, 'Mary Beth Keane', require('../../assets/images/author6.png'), social, 7286, 6.8, description, 1300, 'red',[], [], [])
 };
 
 export { authors };

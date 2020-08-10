@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
@@ -7,15 +8,23 @@ import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import OctIcon from 'react-native-vector-icons/Octicons';
 import { View, Text } from 'react-native';
 
+import Main from '../screens/Main';
+
 const PlaceHolder: React.FC = () => {
   return (
     <View>
-      <Text>home</Text>
+      <Text>PlaceHolder</Text>
     </View>
   );
 };
 
 const links = [
+  {
+    name: 'Home',
+    route: 'Main',
+    icon: <AntDesignIcon name="home" size={18} />,
+    component: Main,
+  },
   {
     name: 'Browse',
     route: 'Browse',

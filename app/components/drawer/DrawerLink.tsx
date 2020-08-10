@@ -4,15 +4,14 @@ import { Fonts, Colors } from '../../utils';
 
 const DrawerLink: React.FC<{
   name: string;
-  route: string;
+  route?: string;
   icon: JSX.Element;
-}> = ({ name, route, icon }) => {
+  onPress: () => void;
+}> = ({ name, icon, onPress }) => {
   return (
     <TouchableNativeFeedback
       background={TouchableNativeFeedback.Ripple(Colors.lightBackground)}
-      onPress={() => {
-        console.log('navigate to ', route);
-      }}>
+      onPress={onPress}>
       <View style={styles.container}>
         <Text style={[styles.icon, { color: Colors.gray }]}>{icon}</Text>
         <Text style={[Fonts.medium, { fontSize: 14 }]}>{name}</Text>
