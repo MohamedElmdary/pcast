@@ -11,6 +11,8 @@ const Colors = {
   opacityDarkGreen: 'rgba(69, 146, 33, 0.15)',
   darkBackground: '#09121C',
   lightBackground: '#19232F',
+  drawerBackground: '#081727',
+  drawerContentBackground: '#060D15',
 };
 
 export { Colors };
