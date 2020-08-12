@@ -5,6 +5,9 @@ import NavigatorDrawer from './routes/NavigatorDrawer';
 import { StatusBar } from 'react-native';
 import { Colors } from './utils';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 const App: React.FC = () => {
   useEffect(() => {
     StatusBar.setBarStyle('light-content');
@@ -12,9 +15,11 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <NavigationContainer>
-      <NavigatorDrawer />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <NavigatorDrawer />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

@@ -9,18 +9,23 @@ import {
 
 import Navbar from '../components/Navbar';
 import { Colors, Fonts } from '../utils';
-import { podcasts, otherPodcasts, authors } from '../data';
 import FullPodcast from '../components/main/FullPodcast';
 import OtherPodcast from '../components/main/OtherPodcast';
 import SubLinks from '../components/main/SubLinks';
 import PodcastAuthor from '../components/main/PodcastAuthor';
+import { useSelector } from 'react-redux';
+import { AppState } from '../store';
 
 const Main: React.FC = () => {
+  const podcasts = useSelector((s: AppState) => s.pcast.podcasts);
+  const otherPodcasts = useSelector((s: AppState) => s.pcast.otherPodcasts);
+  const authors = useSelector((s: AppState) => s.pcast.authors);
+
   return (
     <ScrollView style={styles.container}>
       <View style={{ marginBottom: 40 }}>
         <ImageBackground
-          source={podcasts[0].image}
+          source={podcasts?.[0].image}
           style={[styles.image, styles.height]}
           resizeMode="cover"
           blurRadius={1}>
@@ -35,7 +40,7 @@ const Main: React.FC = () => {
             <ScrollView
               horizontal={true}
               style={{ paddingLeft: 33, paddingRight: 50 }}>
-              {podcasts.map((podcast) => (
+              {podcasts?.map((podcast) => (
                 <FullPodcast podcast={podcast} key={podcast.id} />
               ))}
             </ScrollView>
@@ -59,7 +64,7 @@ const Main: React.FC = () => {
             style={{
               paddingBottom: 20,
             }}>
-            {otherPodcasts.map((poscast) => (
+            {otherPodcasts?.map((poscast) => (
               <OtherPodcast podcast={poscast} key={poscast.id} />
             ))}
           </ScrollView>
@@ -70,13 +75,7 @@ const Main: React.FC = () => {
           </Text>
           <SubLinks links={['Recent', 'Most podcasts', 'Most followed']} />
           <ScrollView horizontal={true} style={{ paddingBottom: 50 }}>
-            {[
-              authors.harlod,
-              authors.gregory,
-              authors.leslie,
-              authors.rosemary,
-              authors.harlod,
-            ].map((author, i) => (
+            {authors?.map((author, i) => (
               <PodcastAuthor author={author} key={i} />
             ))}
           </ScrollView>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import { Modal, View, StyleSheet, FlatList, TextInput } from 'react-native';
 import { Fonts, Colors } from '../../utils';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
-import { podcasts } from '../../data';
 import SearchResult from './SearchResult';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppState, AppActions } from '../../store';
 
 interface Props {
   visible: boolean;
@@ -11,12 +12,19 @@ interface Props {
 }
 
 const SearchModal: React.FC<Props> = ({ visible, setVisible }) => {
+  const dispatch: Dispatch<AppActions['pcast']> = useDispatch();
+
+  const results = useSelector((s: AppState) => s.pcast.SearchResult);
+
   return (
     <Modal
       transparent={true}
       animationType="fade"
       visible={visible}
-      onRequestClose={() => setVisible(false)}>
+      onRequestClose={() => {
+        setVisible(false);
+        dispatch({ type: 'SEARCH_PCAST', payload: '' });
+      }}>
       <View style={styles.container}>
         <View style={styles.searchContainer}>
           <TextInput
@@ -24,6 +32,9 @@ const SearchModal: React.FC<Props> = ({ visible, setVisible }) => {
             placeholderTextColor={Colors.gray}
             placeholder="Search ..."
             style={[Fonts.medium, styles.searchInp]}
+            onChangeText={(payload) => {
+              dispatch({ type: 'SEARCH_PCAST', payload });
+            }}
           />
           <FontistoIcon
             name="search"
@@ -34,7 +45,7 @@ const SearchModal: React.FC<Props> = ({ visible, setVisible }) => {
         </View>
         <View style={styles.resultContainer}>
           <FlatList
-            data={podcasts}
+            data={results}
             renderItem={({ item }) => <SearchResult podcast={item} />}
             keyExtractor={(item) => item.id.toString()}
           />
