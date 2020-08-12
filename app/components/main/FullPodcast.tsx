@@ -5,12 +5,31 @@ import { Colors, Fonts, GlobalStyles } from '../../utils';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 
-const FullPodcast: React.FC<{ podcast: Podcast }> = ({ podcast }) => {
+interface Props {
+  podcast: Podcast;
+  margin?: number;
+  newBadge?: boolean;
+  width?: boolean;
+}
+
+const FullPodcast: React.FC<Props> = ({
+  podcast,
+  margin = 30,
+  newBadge = true,
+  width = true,
+}) => {
   return (
     <View style={{ height: 190, paddingTop: 10 }}>
-      <ImageBackground source={podcast.image} style={styles.container}>
+      <ImageBackground
+        source={podcast.image}
+        style={[
+          styles.container,
+          { marginRight: margin },
+          width ? { width: 309 } : null,
+          newBadge ? null : { overflow: 'hidden' },
+        ]}>
         <View style={[styles.container, styles.containerView]}>
-          {podcast.isNew ? (
+          {newBadge && podcast.isNew ? (
             <View style={styles.new}>
               <Text style={[Fonts.bold, { fontSize: 12 }]}>NEW</Text>
             </View>
@@ -75,10 +94,8 @@ const FullPodcast: React.FC<{ podcast: Podcast }> = ({ podcast }) => {
 const styles = StyleSheet.create({
   container: {
     height: 180,
-    width: 309,
     borderRadius: 24,
     borderBottomRightRadius: 0,
-    marginRight: 30,
   },
   containerView: {
     backgroundColor: Colors.overlay,

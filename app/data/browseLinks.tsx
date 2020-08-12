@@ -7,6 +7,7 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import Categories from '../components/browse/Categories';
 import Topics from '../components/browse/Topics';
 import Authors from '../components/browse/Authors';
+import Podcasts from '../components/browse/Podcasts';
 
 const PlaceHolder: React.FC = () => {
   return (
@@ -44,7 +45,7 @@ const browseLinks = [
     name: 'Podcasts',
     route: 'Podcasts',
     icon: <FeatherIcon name="mic" {...iconStyle} />,
-    component: PlaceHolder,
+    component: Podcasts,
   },
   {
     name: 'Episodes',
