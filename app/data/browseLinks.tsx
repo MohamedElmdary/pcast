@@ -3,8 +3,10 @@ import { View, Text } from 'react-native';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+
 import Categories from '../components/browse/Categories';
 import Topics from '../components/browse/Topics';
+import Authors from '../components/browse/Authors';
 
 const PlaceHolder: React.FC = () => {
   return (
@@ -36,7 +38,7 @@ const browseLinks = [
     name: 'Authors',
     route: 'Authors',
     icon: <FontistoIcon name="slightly-smile" {...iconStyle} />,
-    component: PlaceHolder,
+    component: Authors,
   },
   {
     name: 'Podcasts',

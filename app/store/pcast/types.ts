@@ -7,6 +7,7 @@ export interface PcastState {
   SearchResult: Podcast[];
   categories: Category[];
   topics: Topic[];
+  tabAuthors: Author[];
 }
 
 export interface Pcast {

@@ -16,6 +16,7 @@ const initState: PcastState = {
   SearchResult: [],
   categories,
   topics,
+  tabAuthors: [authors.robet, authors.rowling, authors.mary],
 };
 
 function PcastReducer(previousState = initState, action: PcastActions) {

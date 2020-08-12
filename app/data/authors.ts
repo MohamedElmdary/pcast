@@ -18,11 +18,11 @@ const authors = {
   // prettier-ignore
   leslie: new Author(3, 'Leslie Fisher', require('../../assets/images/author3.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  robet: new Author(4, 'Robert Dugoni', require('../../assets/images/author4.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
+  robet: new Author(4, 'Robert Dugoni', require('../../assets/images/author4.png'), social, 7286, 6.8, description, 1300, 'blue',[], [], []),
   // prettier-ignore
   rowling: new Author(5, 'J.K. Rowling', require('../../assets/images/author5.png'), social, 7286, 6.8, description, 1300, 'red',[], [], []),
   // prettier-ignore
-  mary: new Author(6, 'Mary Beth Keane', require('../../assets/images/author6.png'), social, 7286, 6.8, description, 1300, 'red',[], [], [])
+  mary: new Author(6, 'Mary Beth Keane', require('../../assets/images/author6.png'), social, 7286, 6.8, description, 1300, 'green',[], [], [])
 };
 
 export { authors };
