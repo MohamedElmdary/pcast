@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import Categories from '../components/browse/Categories';
 
 const PlaceHolder: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const browseLinks = [
     name: 'Categories',
     route: 'Categories',
     icon: <MaterialCommunityIcon name="view-list" {...iconStyle} />,
-    component: PlaceHolder,
+    component: Categories,
   },
   {
     name: 'Topics',

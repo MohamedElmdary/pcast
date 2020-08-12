@@ -9,6 +9,7 @@ const Tab = createMaterialTopTabNavigator();
 const BrowseTabBar: React.FC = () => {
   return (
     <Tab.Navigator
+      swipeEnabled={false}
       sceneContainerStyle={{
         backgroundColor: Colors.transparent,
       }}

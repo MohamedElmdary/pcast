@@ -1,6 +1,7 @@
 import { PcastActions } from './types';
 import { PcastState } from './types';
 import { podcasts, otherPodcasts, authors } from '../../data';
+import { categories } from '../../data';
 
 const initState: PcastState = {
   podcasts,
@@ -13,6 +14,7 @@ const initState: PcastState = {
     authors.harlod,
   ],
   SearchResult: [],
+  categories,
 };
 
 function PcastReducer(previousState = initState, action: PcastActions) {
