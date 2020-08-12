@@ -5,7 +5,7 @@ class Topic {
     public id: number,
     public full_name: string,
     public name: string,
-    public image: string,
+    public image: { uri: string },
     public authorsNo: number,
     public podcasts: number,
     public followers: number,

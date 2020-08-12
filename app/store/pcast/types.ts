@@ -1,4 +1,4 @@
-import { Podcast, Author, Category } from '../../types';
+import { Podcast, Author, Category, Topic } from '../../types';
 
 export interface PcastState {
   podcasts: Podcast[];
@@ -6,6 +6,7 @@ export interface PcastState {
   authors: Author[];
   SearchResult: Podcast[];
   categories: Category[];
+  topics: Topic[];
 }
 
 export interface Pcast {

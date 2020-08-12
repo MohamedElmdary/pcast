@@ -4,6 +4,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import Categories from '../components/browse/Categories';
+import Topics from '../components/browse/Topics';
 
 const PlaceHolder: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ const browseLinks = [
     name: 'Topics',
     route: 'Topics',
     icon: <FontistoIcon name="world-o" {...iconStyle} />,
-    component: PlaceHolder,
+    component: Topics,
   },
   {
     name: 'Authors',
