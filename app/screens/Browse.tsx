@@ -1,24 +1,30 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 
 import { Colors, Fonts } from '../utils';
 import Navbar from '../components/Navbar';
 import SearchInput from '../components/modals/SearchInput';
+import BrowseTabBar from '../routes/BrowseTabBar';
 
 const Browse: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Navbar />
-      <View style={{ paddingHorizontal: 33 }}>
-        <Text style={[Fonts.bold, { fontSize: 48, marginBottom: 32 }]}>
-          Browse
-        </Text>
-        <SearchInput
-          background={Colors.darkInputBackground}
-          onChangeText={() => null}
-        />
-      </View>
-      <View></View>
+      <ScrollView>
+        <Navbar />
+        <View style={{ paddingHorizontal: 33, marginBottom: 33 }}>
+          <Text style={[Fonts.bold, { fontSize: 48, marginBottom: 32 }]}>
+            Browse
+          </Text>
+          <SearchInput
+            background={Colors.darkInputBackground}
+            onChangeText={() => null}
+            autoFocus={false}
+          />
+        </View>
+        <View style={{ paddingLeft: 33 }}>
+          <BrowseTabBar />
+        </View>
+      </ScrollView>
     </View>
   );
 };

@@ -8,16 +8,18 @@ import FontistoIcon from 'react-native-vector-icons/Fontisto';
 interface Props {
   onChangeText(payload: string): void;
   background?: string;
+  autoFocus?: boolean;
 }
 
 const SearchInput: React.FC<Props> = ({
   onChangeText,
   background = Colors.darkBackground,
+  autoFocus = true,
 }) => {
   return (
     <View style={{ position: 'relative' }}>
       <TextInput
-        autoFocus
+        autoFocus={autoFocus}
         placeholderTextColor={Colors.gray}
         placeholder="Search ..."
         style={[

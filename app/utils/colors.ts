@@ -16,6 +16,7 @@ const Colors = {
   drawerContentBackground: '#060D15',
   overlay: 'rgba(0, 0, 0, 0.7)',
   darkInputBackground: '#010304',
+  transparent: 'rgba(0, 0, 0, 0)',
 };
 
 export { Colors };
