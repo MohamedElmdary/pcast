@@ -14,6 +14,7 @@ const NavigatorDrawer: React.FC = () => {
         backgroundColor: 'transparent',
         width: '80%',
       }}
+      initialRouteName="Browse"
       drawerContent={(props) => <AppDrawer drawer={props} />}
       overlayColor={Colors.drawerBackground}>
       {links.map(({ name, route, component }) => (

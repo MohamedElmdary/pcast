@@ -1,10 +1,10 @@
 import React, { Dispatch } from 'react';
 import { Modal, View, StyleSheet, FlatList, TextInput } from 'react-native';
 import { Fonts, Colors } from '../../utils';
-import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import SearchResult from './SearchResult';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState, AppActions } from '../../store';
+import SearchInput from './SearchInput';
 
 interface Props {
   visible: boolean;
@@ -27,20 +27,10 @@ const SearchModal: React.FC<Props> = ({ visible, setVisible }) => {
       }}>
       <View style={styles.container}>
         <View style={styles.searchContainer}>
-          <TextInput
-            autoFocus
-            placeholderTextColor={Colors.gray}
-            placeholder="Search ..."
-            style={[Fonts.medium, styles.searchInp]}
+          <SearchInput
             onChangeText={(payload) => {
               dispatch({ type: 'SEARCH_PCAST', payload });
             }}
-          />
-          <FontistoIcon
-            name="search"
-            size={16}
-            color={Colors.gray}
-            style={styles.searchIcon}
           />
         </View>
         <View style={styles.resultContainer}>
@@ -67,22 +57,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 24,
     borderTopLeftRadius: 24,
     position: 'relative',
-  },
-  searchInp: {
-    backgroundColor: Colors.darkBackground,
-    borderRadius: 16,
-    fontSize: 14,
-    height: 50,
-    display: 'flex',
-    justifyContent: 'center',
-    alignContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 36,
-  },
-  searchIcon: {
-    position: 'absolute',
-    top: 33,
-    right: 32,
   },
   resultContainer: {
     backgroundColor: Colors.lightBackground,

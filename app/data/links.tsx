@@ -9,6 +9,7 @@ import OctIcon from 'react-native-vector-icons/Octicons';
 import { View, Text } from 'react-native';
 
 import Main from '../screens/Main';
+import Browse from '../screens/Browse';
 
 const PlaceHolder: React.FC = () => {
   return (
@@ -29,7 +30,7 @@ const links = [
     name: 'Browse',
     route: 'Browse',
     icon: <FontistoIcon name="world-o" size={18} />,
-    component: PlaceHolder,
+    component: Browse,
   },
   {
     name: 'Subscribed',
