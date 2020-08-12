@@ -4,3 +4,4 @@ export * from './users';
 export * from './userActivities';
 export * from './categories';
 export * from './topics';
+export * from './episodes';

@@ -8,14 +8,7 @@ import Categories from '../components/browse/Categories';
 import Topics from '../components/browse/Topics';
 import Authors from '../components/browse/Authors';
 import Podcasts from '../components/browse/Podcasts';
-
-const PlaceHolder: React.FC = () => {
-  return (
-    <View>
-      <Text>PlaceHolder</Text>
-    </View>
-  );
-};
+import Episodes from '../components/browse/Episodes';
 
 const iconStyle = {
   size: 22,
@@ -51,7 +44,7 @@ const browseLinks = [
     name: 'Episodes',
     route: 'Episodes',
     icon: <FeatherIcon name="layers" {...iconStyle} />,
-    component: PlaceHolder,
+    component: Episodes,
   },
 ];
 
