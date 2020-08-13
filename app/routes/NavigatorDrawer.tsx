@@ -5,6 +5,7 @@ import { Colors } from '../utils';
 import { links } from '../data/links';
 
 import TopicDetails from '../screens/TopicDetails';
+import AuthorDetails from '../screens/AuthorDetails';
 
 const Drawer = createDrawerNavigator();
 
@@ -24,6 +25,7 @@ const NavigatorDrawer: React.FC = () => {
       ))}
       {/* not included in drawer */}
       <Drawer.Screen name="TopicDetails" component={TopicDetails} />
+      <Drawer.Screen name="AuthorDetails" component={AuthorDetails} />
     </Drawer.Navigator>
   );
 };

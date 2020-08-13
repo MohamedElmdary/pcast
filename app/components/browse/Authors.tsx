@@ -17,7 +17,7 @@ const Authors: React.FC = () => {
         ]}>
         Authors ({authors?.length ?? 0})
       </Text>
-      <View>
+      <View style={{ paddingRight: 33 }}>
         {authors?.map((author) => (
           <AuthorItem author={author} key={author.id} />
         ))}

@@ -19,6 +19,7 @@ const initState: PcastState = {
   tabAuthors: [authors.robet, authors.rowling, authors.mary],
   episodes,
   activeTopic: -1,
+  activeAuthor: -1,
 };
 
 function PcastReducer(previousState = initState, action: PcastActions) {
@@ -39,6 +40,10 @@ function PcastReducer(previousState = initState, action: PcastActions) {
 
     case 'ACTIVE_TOPIC':
       state.activeTopic = action.payload;
+      return state;
+
+    case 'ACTIVE_AUTHOR':
+      state.activeAuthor = action.payload;
       return state;
 
     default:

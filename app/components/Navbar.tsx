@@ -5,17 +5,28 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { Colors } from '../utils';
 import SearchModal from './modals/SearchModal';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 
 const logo = require('../../assets/images/pcast-logo.png');
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
   const navigation = useNavigation();
   const [visible, setVisible] = useState(false);
 
   return (
     <>
       <View style={styles.container}>
-        <Image source={logo} style={{ width: 90, height: 42 }} />
+        {onClick ? (
+          <TouchableNativeFeedback onPress={onClick}>
+            <IonIcon
+              name="ios-arrow-back-outline"
+              size={20}
+              color={Colors.white}
+            />
+          </TouchableNativeFeedback>
+        ) : (
+          <Image source={logo} style={{ width: 90, height: 42 }} />
+        )}
         <View style={styles.subContainer}>
           <TouchableNativeFeedback
             onPress={() => {
