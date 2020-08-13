@@ -9,6 +9,7 @@ export interface PcastState {
   topics: Topic[];
   tabAuthors: Author[];
   episodes: Episode[];
+  activeTopic: number;
 }
 
 export interface Pcast {
@@ -21,7 +22,12 @@ export interface SearchPcast {
   payload: string;
 }
 
+export interface ActiveTopic {
+  type: 'ACTIVE_TOPIC';
+  payload: number;
+}
+
 /**
  *
  */
-export type PcastActions = Pcast | SearchPcast;
+export type PcastActions = Pcast | SearchPcast | ActiveTopic;

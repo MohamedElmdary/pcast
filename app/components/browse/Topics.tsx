@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { Fonts, Colors } from '../../utils';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store';
-import TopicsItem from './Topic';
+import TopicsItem from './TopicItem';
 
 const Topics: React.FC = () => {
   const topics = useSelector((s: AppState) => s.pcast.topics);

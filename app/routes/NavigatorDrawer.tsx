@@ -4,6 +4,8 @@ import AppDrawer from './Drawer';
 import { Colors } from '../utils';
 import { links } from '../data/links';
 
+import TopicDetails from '../screens/TopicDetails';
+
 const Drawer = createDrawerNavigator();
 
 const NavigatorDrawer: React.FC = () => {
@@ -20,6 +22,8 @@ const NavigatorDrawer: React.FC = () => {
       {links.map(({ name, route, component }) => (
         <Drawer.Screen name={route} key={name} component={component} />
       ))}
+      {/* not included in drawer */}
+      <Drawer.Screen name="TopicDetails" component={TopicDetails} />
     </Drawer.Navigator>
   );
 };
